@@ -22,7 +22,7 @@ export function BanErr() {
   useEffect(() => {
     const checkIsBanned = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/bantime`, tokenHeader);
+        const response = await axios.get(`${apiUrl}/user/bantime`, tokenHeader);
         console.log(response);
         if (response) {
           if (response.data === "permanently banned") {
