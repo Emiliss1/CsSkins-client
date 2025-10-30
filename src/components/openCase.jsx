@@ -190,7 +190,12 @@ function openCase() {
         } catch (err) {
           console.log("error", err);
 
-          setAuthErr(<AuthErr />);
+          if (err.status === 403) {
+            setAuthErr(<PermErr />);
+          }
+          if (err.status === 401) {
+            setAuthErr(<AuthErr />);
+          }
         }
       }
     } catch (err) {
