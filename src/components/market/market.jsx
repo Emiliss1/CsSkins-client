@@ -66,7 +66,7 @@ function Market() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${apiUrl}user/profile`, tokenHeader);
+        const response = await axios.get(`${apiUrl}/user/profile`, tokenHeader);
 
         if (response) {
           setUser(response.data.username);
@@ -278,7 +278,7 @@ function Market() {
                         className="w-10 h-10 rounded-full"
                         src={
                           skin.user.image
-                            ? `http://localhost:3000/uploads\\${skin.user.image}`
+                            ? `${apiUrl}/uploads\\${skin.user.image}`
                             : defaultProfilePicture
                         }
                         alt=""

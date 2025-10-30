@@ -32,7 +32,7 @@ function Main() {
   useEffect(() => {
     const checkIsAdmin = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/profile`, tokenHeader);
+        const response = await axios.get(`${apiUrl}/user/profile`, tokenHeader);
         if (response.data.role === "admin") {
           setIsAdmin(true);
         } else {
